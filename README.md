@@ -7,6 +7,19 @@ SAHYOG is a community-driven platform that connects households with trusted loca
 The platform is designed around a cooperative model that promotes fair earnings, community participation, and transparent service management.
 
 ---
+## 📸 Screenshots
+
+### 🏠 Homepage
+
+![SAHYOG Homepage](homepage.png)
+
+### 🔧 Services
+
+![SAHYOG Services](services.png)
+
+### 👨‍🔧 Professional Section
+
+![SAHYOG Professionals](professionals.png)
 
 ## 🚀 Features
 
