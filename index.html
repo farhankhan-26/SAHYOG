@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SAHYOG - trusted local home services with verified professionals.">
+  <title>SAHYOG | Trusted Services, Together</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="toast" class="toast"></div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#" aria-label="SAHYOG home">
+        <span class="brand-mark">S</span>
+        <span><strong>SAHYOG</strong><small>Trusted help, nearby.</small></span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#trust">Trust & Safety</a>
+        <a href="#providers">For professionals</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="location-btn" id="locationBtn">⌖ <span id="locationText">Ludhiana</span></button>
+        <button class="outline-btn" id="loginBtn">Login</button>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#services">Services</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#trust">Trust & Safety</a>
+      <a href="#providers">For professionals</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="pulse"></span> Trusted local professionals</div>
+          <h1>Reliable help.<br><span>Right at your doorstep.</span></h1>
+          <p>Book verified workers for repairs, cleaning, electrical work, plumbing and more — with transparent pricing and safety at the centre.</p>
+
+          <div class="search-box">
+            <span class="search-icon">⌕</span>
+            <input id="serviceSearch" type="search" placeholder="What service do you need today?" autocomplete="off">
+            <button id="searchBtn">Find help</button>
+          </div>
+          <div class="quick-search">
+            <span>Popular:</span>
+            <button data-search="electrician">Electrician</button>
+            <button data-search="plumber">Plumber</button>
+            <button data-search="ac">AC repair</button>
+            <button data-search="cleaning">Cleaning</button>
+          </div>
+
+          <div class="hero-trust">
+            <div><strong>4.8/5</strong><span>average rating</span></div>
+            <div><strong>100%</strong><span>KYC-focused model</span></div>
+            <div><strong>₹49+</strong><span>starting services</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card hero-card-main">
+            <div class="worker-illustration">
+              <div class="worker-head"></div>
+              <div class="worker-body"><span>✓</span></div>
+              <div class="tool tool-one">🔧</div>
+              <div class="tool tool-two">⚡</div>
+            </div>
+            <div class="floating-card verified-card">
+              <span class="check">✓</span>
+              <div><strong>Verified professional</strong><small>Identity & profile checked</small></div>
+            </div>
+            <div class="floating-card rating-card">
+              <strong>4.9</strong><span>★ ★ ★ ★ ★</span><small>127 completed jobs</small>
+            </div>
+          </div>
+          <div class="hero-accent accent-one"></div>
+          <div class="hero-accent accent-two"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div class="container trust-strip-inner">
+        <span>Why people choose SAHYOG</span>
+        <div>✓ Verified profiles</div>
+        <div>✓ Clear pricing</div>
+        <div>✓ Ratings & reviews</div>
+        <div>✓ Booking confirmation</div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Explore services</span>
+            <h2>What do you need help with?</h2>
+          </div>
+          <button class="text-btn" id="viewAllBtn">View all services →</button>
+        </div>
+
+        <div class="category-grid">
+          <button class="category active" data-category="all"><span class="cat-icon">✦</span><strong>All services</strong><small>Everything in one place</small></button>
+          <button class="category" data-category="electrician"><span class="cat-icon">⚡</span><strong>Electrician</strong><small>Switches, fans & wiring</small></button>
+          <button class="category" data-category="plumber"><span class="cat-icon">🔧</span><strong>Plumbing</strong><small>Leaks, taps & fittings</small></button>
+          <button class="category" data-category="cleaning"><span class="cat-icon">✦</span><strong>Cleaning</strong><small>Home & deep cleaning</small></button>
+          <button class="category" data-category="ac"><span class="cat-icon">❄</span><strong>AC & appliance</strong><small>Repair & installation</small></button>
+          <button class="category" data-category="carpenter"><span class="cat-icon">⌘</span><strong>Carpenter</strong><small>Furniture & doors</small></button>
+        </div>
+
+        <div class="service-grid" id="serviceGrid"></div>
+      </div>
+    </section>
+
+    <section class="smart-section">
+      <div class="container smart-card">
+        <div class="smart-copy">
+          <div class="ai-badge">✦ SAHYOG SMARTMATCH</div>
+          <h2>Not sure what service you need?</h2>
+          <p>Describe the problem in normal words. Our smart assistant can suggest the right service, urgency and an approximate price range.</p>
+          <button class="primary-btn" id="openAiBtn">Try SmartMatch <span>→</span></button>
+        </div>
+        <div class="smart-demo">
+          <div class="demo-message user-msg">“My tap is leaking and water is coming under the sink.”</div>
+          <div class="demo-result">
+            <span class="result-icon">✓</span>
+            <div><small>Suggested service</small><strong>Plumber · Tap & pipe repair</strong><span>Estimated ₹149–₹399 · Normal priority</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light-section" id="trust">
+      <div class="container">
+        <div class="section-head centered">
+          <span class="eyebrow">Trust by design</span>
+          <h2>Safety is part of the service.</h2>
+          <p>SAHYOG is designed around a simple idea: customers should know who is coming, and professionals should know who they are serving.</p>
+        </div>
+        <div class="trust-grid">
+          <article class="trust-card"><span>01</span><h3>KYC-focused profiles</h3><p>Professionals can complete identity verification before receiving a verified badge on their profile.</p></article>
+          <article class="trust-card"><span>02</span><h3>Ratings that matter</h3><p>Customers can rate completed jobs, helping reliable professionals build a stronger reputation.</p></article>
+          <article class="trust-card"><span>03</span><h3>Booking confirmation</h3><p>Every booking shows the selected service, price estimate, worker and scheduled time before confirmation.</p></article>
+          <article class="trust-card"><span>04</span><h3>Transparent matching</h3><p>SmartMatch explains why a service is recommended instead of silently making the decision for you.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how-it-works">
+      <div class="container">
+        <div class="section-head centered">
+          <span class="eyebrow">Simple process</span>
+          <h2>From problem to solution in 4 steps.</h2>
+        </div>
+        <div class="steps">
+          <div class="step"><b>1</b><h3>Tell us the problem</h3><p>Search for a service or use SmartMatch.</p></div>
+          <div class="step"><b>2</b><h3>Choose a professional</h3><p>Compare rating, jobs, verification and price.</p></div>
+          <div class="step"><b>3</b><h3>Confirm the booking</h3><p>Select a suitable time and confirm.</p></div>
+          <div class="step"><b>4</b><h3>Get it done</h3><p>Track the job and review the experience.</p></div>
+        </div>
+      </div>
+    </section>
+
+<section class="section provider-section" id="providers">
+    <div class="container provider-grid">
+
+        <div>
+            <span class="eyebrow">For professionals</span>
+
+            <h2>Turn your skills into opportunity.</h2>
+
+            <p>
+                Join SAHYOG as a trusted service professional.
+                Create your profile, choose your services and
+                manage customer bookings from one place.
+            </p>
+
+            <ul class="check-list">
+                <li>✓ Create your professional profile</li>
+                <li>✓ Select your service category</li>
+                <li>✓ Add experience and availability</li>
+                <li>✓ Receive and manage customer bookings</li>
+            </ul>
+
+            <button
+                class="primary-btn"
+                id="joinBtn"
+                type="button"
+            >
+                Join as a Professional
+            </button>
+        </div>
+
+        <div class="provider-preview">
+            <div class="profile-top">
+                <span class="avatar">SK</span>
+
+                <div>
+                    <strong>SAHYOG Professional</strong>
+                    <p>Verified service provider</p>
+                </div>
+            </div>
+
+            <div class="profile-stats">
+                <div>
+                    <strong>4.9★</strong>
+                    <span>Rating</span>
+                </div>
+
+                <div>
+                    <strong>120+</strong>
+                    <span>Jobs</span>
+                </div>
+
+                <div>
+                    <strong>98%</strong>
+                    <span>Completion</span>
+                </div>
+            </div>
+
+            <div class="profile-services">
+                <span>Electrical</span>
+                <span>Plumbing</span>
+                <span>AC Repair</span>
+            </div>
+
+            <div class="professional-status">
+                <span></span>
+                Available for new bookings
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <section class="section reviews-section">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow">Real experiences</span><h2>People want reliable, not complicated.</h2></div>
+          <div class="rating-big"><strong>4.8</strong><span>★★★★★<small>Average customer rating</small></span></div>
+        </div>
+        <div class="review-grid">
+          <article class="review"><div>★★★★★</div><p>“The profile made it easy to understand who was coming and what the job would cost.”</p><strong>Priya · Home service</strong></article>
+          <article class="review"><div>★★★★★</div><p>“I described the issue instead of knowing the technical name. The recommendation was useful.”</p><strong>Arjun · Repair service</strong></article>
+          <article class="review"><div>★★★★☆</div><p>“Simple booking flow and the confirmation screen gives all the important details together.”</p><strong>Neha · Cleaning service</strong></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><a class="brand footer-brand" href="#"><span class="brand-mark">S</span><span><strong>SAHYOG</strong><small>Trusted help, nearby.</small></span></a><p>A student-built service marketplace concept focused on trust, accessibility and local opportunities.</p></div>
+      <div><h4>Customers</h4><a href="#services">Browse services</a><a href="#how-it-works">How it works</a><a href="#trust">Trust & Safety</a></div>
+      <div><h4>Professionals</h4><a href="#providers">Join SAHYOG</a><a href="#providers">Verification</a><a href="#providers">Professional profile</a></div>
+      <div><h4>Project</h4><a href="#">About SAHYOG</a><a href="#">Contact</a><a href="#">Privacy</a></div>
+    </div>
+    <div class="container footer-bottom"><span>© 2026 SAHYOG. MVP / prototype.</span><span>Built for a smarter local service experience.</span></div>
+  </footer>
+
+  <!-- Booking modal -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal">
+      <button class="modal-close" data-close="bookingModal">×</button>
+      <div class="modal-eyebrow">BOOK A SERVICE</div>
+      <h2 id="bookingTitle">Book service</h2>
+      <p id="bookingDescription"></p>
+      <div class="booking-summary">
+        <div><span>Estimated price</span><strong id="bookingPrice"></strong></div>
+        <div><span>Professional</span><strong id="bookingWorker"></strong></div>
+        <div><span>Rating</span><strong id="bookingRating"></strong></div>
+      </div>
+      <label>Date<input id="bookingDate" type="date"></label>
+      <label>Preferred time<select id="bookingTime"><option>9:00 AM</option><option>11:00 AM</option><option>1:00 PM</option><option>3:00 PM</option><option>5:00 PM</option><option>7:00 PM</option></select></label>
+      <button class="primary-btn full-btn" id="confirmBooking">Confirm booking</button>
+      <small class="modal-note">Demo only — no real payment or booking is processed.</small>
+    </div>
+  </div>
+
+  <!-- AI modal -->
+  <div class="modal-overlay" id="aiModal">
+    <div class="modal ai-modal">
+      <button class="modal-close" data-close="aiModal">×</button>
+      <div class="ai-badge">✦ SMARTMATCH</div>
+      <h2>Tell me what's wrong.</h2>
+      <p>Use normal language. For example: “my fan is making a noise” or “bathroom needs deep cleaning”.</p>
+      <textarea id="aiInput" rows="4" placeholder="Describe your problem..."></textarea>
+      <button class="primary-btn full-btn" id="aiSubmit">Find the right service →</button>
+      <div id="aiResult" class="ai-result hidden"></div>
+      <small class="modal-note">Prototype intelligence: this MVP uses local service-matching rules. A real AI/API can be connected later.</small>
+    </div>
+  </div>
+
+<!-- Customer Authentication Modal -->
+<div class="modal-overlay" id="simpleModal">
+    <div class="modal">
+
+        <button class="modal-close" data-close="simpleModal">×</button>
+
+        <div class="modal-eyebrow" id="simpleEyebrow">
+            CUSTOMER LOGIN
+        </div>
+
+        <h2 id="simpleTitle">
+            Welcome back.
+        </h2>
+
+        <p id="simpleText">
+            Login to manage your SAHYOG bookings.
+        </p>
+
+        <label>
+            Email
+            <input
+                id="authEmail"
+                type="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+            >
+        </label>
+
+        <label>
+            Password
+            <input
+                id="authPassword"
+                type="password"
+                placeholder="Minimum 6 characters"
+                autocomplete="current-password"
+            >
+        </label>
+
+        <button
+            class="primary-btn full-width"
+            id="simpleAction"
+            type="button"
+        >
+            Login
+        </button>
+
+        <button
+            class="auth-toggle"
+            id="authToggle"
+            type="button"
+        >
+            New to SAHYOG? Create account
+        </button>
+
+        <small class="modal-note" id="authNote">
+            Your account will be secured using Supabase Authentication.
+        </small>
+
+    </div>
+</div>
+<!-- Customer Authentication Modal -->
+
+<!-- PROFESSIONAL AUTH MODAL -->
+<div class="modal-overlay" id="professionalAuthModal">
+    <div class="modal professional-auth-modal">
+
+        <button
+            class="modal-close"
+            data-close="professionalAuthModal"
+            aria-label="Close professional login"
+        >
+            ×
+        </button>
+
+        <div class="modal-eyebrow" id="professionalAuthEyebrow">
+            PROFESSIONAL REGISTRATION
+        </div>
+
+        <h2 id="professionalAuthTitle">
+            Join SAHYOG.
+        </h2>
+
+        <p id="professionalAuthText">
+            Create your professional account and start receiving service requests.
+        </p>
+
+        <label>
+            Full Name
+            <input
+                id="professionalName"
+                type="text"
+                placeholder="Enter your full name"
+                autocomplete="name"
+            >
+        </label>
+
+        <label>
+            Email
+            <input
+                id="professionalEmail"
+                type="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+            >
+        </label>
+
+        <label>
+            Password
+            <input
+                id="professionalPassword"
+                type="password"
+                placeholder="Minimum 6 characters"
+                autocomplete="new-password"
+            >
+        </label>
+
+        <label>
+            Service Category
+            <select id="professionalCategory">
+                <option value="">Select a service</option>
+                <option value="electrician">Electrician</option>
+                <option value="plumber">Plumber</option>
+                <option value="ac">AC Service & Repair</option>
+                <option value="cleaning">Home Cleaning</option>
+                <option value="carpenter">Carpenter</option>
+            </select>
+        </label>
+
+        <label>
+            Experience
+            <input
+                id="professionalExperience"
+                type="number"
+                min="0"
+                max="50"
+                placeholder="Years of experience"
+            >
+        </label>
+
+        <button
+            class="primary-btn full-width"
+            id="professionalAuthAction"
+            type="button"
+        >
+            Create Professional Account
+        </button>
+
+        <button
+            class="auth-toggle"
+            id="professionalAuthToggle"
+            type="button"
+        >
+            Already have an account? Login
+        </button>
+
+        <small class="modal-note">
+            Your account will be secured using Supabase Authentication.
+        </small>
+
+    </div>
+</div>
+
+
+<!-- CUSTOMER PORTAL MODAL -->
+<div class="modal-overlay" id="customerPortalModal">
+
+    <div class="modal customer-portal">
+
+        <button
+            class="modal-close"
+            data-close="customerPortalModal"
+            aria-label="Close account"
+        >
+            ×
+        </button>
+
+        <div class="modal-eyebrow">
+            MY SAHYOG
+        </div>
+
+        <h2>My Account</h2>
+
+        <p id="customerEmail">
+            Loading account...
+        </p>
+
+        <div class="portal-stats">
+
+            <div class="portal-stat">
+                <strong id="totalBookings">0</strong>
+                <span>Total bookings</span>
+            </div>
+
+            <div class="portal-stat">
+                <strong id="pendingBookings">0</strong>
+                <span>Pending</span>
+            </div>
+
+        </div>
+
+        <div class="portal-section">
+
+            <div class="portal-section-header">
+                <h3>My Bookings</h3>
+            </div>
+
+            <div id="customerBookings">
+
+                <div class="portal-empty">
+                    Loading bookings...
+                </div>
+
+            </div>
+
+        </div>
+
+        <button
+            class="primary-btn full-width"
+            id="logoutBtn"
+            type="button"
+        >
+            Logout
+        </button>
+
+    </div>
+
+</div>
+<!-- PROFESSIONAL DASHBOARD MODAL -->
+<div class="modal-overlay" id="professionalDashboardModal">
+
+    <div class="modal customer-portal professional-dashboard">
+
+        <button
+            class="modal-close"
+            data-close="professionalDashboardModal"
+            aria-label="Close professional dashboard"
+        >
+            ×
+        </button>
+
+        <div class="modal-eyebrow">
+            SAHYOG PROFESSIONAL
+        </div>
+
+        <h2>Professional Dashboard</h2>
+
+        <p id="professionalDashboardEmail">
+            Loading account...
+        </p>
+
+        <!-- PROFESSIONAL PROFILE -->
+        <div class="portal-stats">
+
+            <div class="portal-stat">
+                <strong id="professionalCategoryDisplay">
+                    —
+                </strong>
+                <span>Service</span>
+            </div>
+
+            <div class="portal-stat">
+                <strong id="professionalExperienceDisplay">
+                    0
+                </strong>
+                <span>Years experience</span>
+            </div>
+
+            <div class="portal-stat">
+                <strong id="professionalKycDisplay">
+                    Pending
+                </strong>
+                <span>KYC status</span>
+            </div>
+
+        </div>
+
+
+        <!-- AVAILABILITY -->
+        <div class="portal-section">
+
+            <div class="portal-section-header">
+                <h3>Availability</h3>
+            </div>
+
+            <div class="professional-availability">
+
+                <div>
+                    <strong id="professionalAvailabilityText">
+                        Available
+                    </strong>
+
+                    <p>
+                        Receive new service requests
+                    </p>
+                </div>
+
+                <label class="availability-switch">
+
+                    <input
+                        type="checkbox"
+                        id="professionalAvailabilityToggle"
+                        checked
+                    >
+
+                    <span class="availability-slider"></span>
+
+                </label>
+
+            </div>
+
+        </div>
+
+
+        <!-- SERVICE REQUESTS -->
+        <div class="portal-section">
+
+            <div class="portal-section-header">
+                <h3>Service Requests</h3>
+            </div>
+
+            <div id="professionalBookings">
+
+                <div class="portal-empty">
+                    No service requests yet.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOGOUT -->
+        <button
+            class="primary-btn full-width"
+            id="professionalLogoutBtn"
+            type="button"
+        >
+            Logout
+        </button>
+
+    </div>
+
+</div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
