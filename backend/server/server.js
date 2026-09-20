@@ -6,7 +6,7 @@ const path = require("path");
 const { createClient } = require("@supabase/supabase-js");
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 // =========================
 // SUPABASE CONNECTION
@@ -316,7 +316,7 @@ app.post("/api/professionals", async (req, res) => {
 // START SERVER
 // =========================
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
     console.log(
         `SAHYOG server running at http://localhost:${PORT}`
     );
